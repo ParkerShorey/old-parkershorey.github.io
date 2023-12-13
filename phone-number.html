@@ -1,0 +1,47 @@
+  <title>Please enter your phone number</title>
+  <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+  
+<style>
+body {
+	margin: 20px;
+}
+#slider {
+	width: 500px;
+	margin: 20px 10px;
+}
+.note {
+	position: absolute;
+	top:42px;
+	Left: 560px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+<body translate="no">
+  <p>Please enter your phone number:</p>
+<div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 21.5856%;"></span></div>
+<p class="note"><span id="currentValue">0</span></p>
+<input type="submit" value="Submit">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script id="rendered-js">
+$(function () {
+
+  var currentValue = $('#currentValue');
+
+  $("#slider").slider({
+    max: 9999999999,
+    min: 0,
+    value: 0,
+    slide: function (event, ui) {
+      currentValue.html(ui.value);
+    } });
+
+
+});
+    </script>
+    
+</body></html>
