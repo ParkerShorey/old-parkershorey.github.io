@@ -1,7 +1,59 @@
+
 <!--
-MADE BY ME WITH CTRL + C AND CTRL +V
+MADE BY ME WITH CTRL + C AND CTRL + V 
+the big technical stuff is from w3 and stackoverflow :)
 //-->
 
+<style>
+.button {
+  background-color: #A9A9A9;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.theButton {
+  border-radius: 20px;
+  background-color: #343434;
+  color: white;
+  border: 2px solid #777777;
+}
+
+.theButton:hover {
+  border-radius: 10px;
+  background-color: #2e2e2e;
+  color: white;
+  border: 2px solid #ffffff;
+}
+
+
+.reload {
+  position: relative;
+  left: 105px;
+  border-radius: 20px;
+  background-color: #343434;
+  color: white;
+  border: 2px solid #777777;
+  visibility: hidden;
+}
+
+.reload:hover {
+  position: relative;
+  left: 100px;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+  color: white;
+  border: 2px solid #ffffff;
+  visibility: hidden;
+}
+</style>
 <script>
 document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
@@ -21,15 +73,19 @@ one second cps test
     
 Clicks: 
   </label>
-  <input type="number" step="1" id="theNumber" style="width: 3em" />
+  <input type="number" step="1" id="theNumber" style="width: 3em" readonly />
 </p>
+<div>
+<button type="hidden" id="reload" style="height: 11vh" class="button reload">Restart</button>
+</div>
 <p>
   <input type="hidden" step="1" id="incrementInput" min="0" max="25" />
 </p>
-<input type="button" style="height: 60vh" value="                                        Start                                        " id="theButton"  />
+
+<button id="theButton" style="height: 60vh" class="button theButton">​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ Start​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ </button>
+
 
 <script>
-/* make the button call the function */
 const button = document.getElementById("theButton");
 button.addEventListener("click", () => {
   stepOnUp();
@@ -40,10 +96,8 @@ function stepOnUp() {
   let val = document.getElementById("incrementInput").value;
 
   if (val) {
-    /* increment with a parameter */
     input.stepUp(val);
   } else {
-    /* or without a parameter. Try it with 0 */
     input.stepUp();
   }
 }
@@ -52,7 +106,7 @@ function stepOnUp() {
 <html>
  
 <head>
-    <title>Page Title</title>
+    <title>Click Speed Test</title>
     <meta content="3">
     <script>
 </script>
@@ -69,3 +123,73 @@ function paw() {
 }
 document.getElementById("theButton").addEventListener("click", paw);
 </script>
+
+<script>
+function color() {
+    setTimeout(function() {
+        document.getElementById("theButton").style.backgroundColor = '#000000';
+		document.getElementById("theButton").style.border = '2px solid #ffffff';
+    }, 900);
+}
+document.getElementById("theButton").addEventListener("click", color);
+</script>
+
+
+<script>
+function reload() {
+    setTimeout(function() {
+document.getElementById("reload").style.visibility = "visible";
+    }, 1100);
+document.getElementById("reload").style.visibility = "hidden";
+}
+document.getElementById("theButton").addEventListener("click", reload);
+</script>
+
+<style>
+html {
+  height: 100vh;
+}
+
+div {
+
+}
+
+
+div.fade-in {
+  display: block;
+  animation: fade-in 2s ease-in forwards;
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    display: block;
+  }
+
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+
+</style>
+
+<script>
+const divElem = document.querySelector("div");
+const htmlElem = document.querySelector(":root");
+
+htmlElem.addEventListener("click", showHide);
+
+function showHide() {
+  if (divElem.classList[0] === "fade-in") {
+
+    divElem.classList.add("fade-in");
+  } else {
+
+    divElem.classList.add("fade-in");
+  }
+}
+</script>
+
+
