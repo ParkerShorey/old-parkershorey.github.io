@@ -76,7 +76,7 @@ Clicks:
   <input type="number" step="1" id="theNumber" style="width: 3em" readonly />
 </p>
 <div>
-<button onclick="load" type="hidden" id="reload" style="height: 11vh" class="button reload">Restart</button>
+<button onclick="window.location.reload();" type="hidden" id="reload" style="height: 11vh" class="button reload">Restart</button>
 </div>
 <p>
   <input type="hidden" step="1" id="incrementInput" min="0" max="25" />
@@ -123,11 +123,6 @@ function paw() {
 }
 document.getElementById("theButton").addEventListener("click", paw);
 </script>
-<script>
-	function load() {
-	location.reload ();
-	}
-		</script>
 <script>
 function color() {
     setTimeout(function() {
